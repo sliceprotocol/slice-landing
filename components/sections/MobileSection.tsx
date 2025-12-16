@@ -1,27 +1,25 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   Apple,
   Play,
   Battery,
   Signal,
   Wifi,
-  ChevronDown,
-  Bell,
-  ScanLine,
 } from "lucide-react";
 
-// 1. The Internal App UI (Reused for all phones)
-function PhoneContent({ isDark = false }: { isDark?: boolean }) {
-  const bgClass = isDark ? "bg-[#0C110F] text-white" : "bg-white text-black";
-  const textMuted = isDark ? "text-gray-500" : "text-gray-400";
-  const itemHover = isDark ? "bg-white/5" : "bg-gray-50";
-
+// 1. Image-Based Phone Screen Component
+function PhoneScreen({
+  imageSrc,
+  altText
+}: {
+  imageSrc: string,
+  altText: string
+}) {
   return (
-    <div
-      className={`h-full w-full flex flex-col font-sans ${bgClass} select-none`}
-    >
-      {/* Status Bar */}
-      <div className="flex justify-between items-center px-7 pt-5 text-[10px] font-medium tracking-wide opacity-80">
+    <div className="relative h-full w-full bg-black select-none overflow-hidden flex flex-col">
+      {/* Status Bar Overlay - Optional if image doesn't have it */}
+      <div className="absolute top-0 inset-x-0 h-12 z-20 flex justify-between items-center px-7 pt-2 text-[10px] font-medium tracking-wide text-white mix-blend-difference opacity-80 pointer-events-none">
         <span>9:41</span>
         <div className="flex gap-1.5">
           <Signal className="h-3 w-3" />
@@ -30,115 +28,13 @@ function PhoneContent({ isDark = false }: { isDark?: boolean }) {
         </div>
       </div>
 
-      {/* App Header */}
-      <div className="px-6 pb-2 pt-8 flex justify-between items-start">
-        <div className="flex items-center gap-3">
-          <div
-            className={`size-10 rounded-full flex items-center justify-center text-base shadow-sm ${isDark ? "bg-gray-800 text-white" : "bg-gray-100 text-black border border-gray-200"}`}
-          >
-            💰
-          </div>
-          <div className="text-left">
-            <div className="flex items-center gap-1 text-sm font-bold cursor-pointer">
-              Main treasury <ChevronDown className="size-3 opacity-50" />
-            </div>
-            <div className={`text-[11px] font-mono ${textMuted}`}>
-              0x13d9...4589
-            </div>
-          </div>
-        </div>
-        <div className="flex gap-3 pt-1">
-          <ScanLine className="size-5 opacity-60" />
-          <Bell className="size-5 opacity-60" />
-        </div>
-      </div>
-
-      {/* Balance Hero */}
-      <div className="px-6 py-6 text-center">
-        <div className="text-4xl font-extrabold tracking-tight">
-          $1,854,380
-          <span className="text-gray-400 text-2xl font-bold">.52</span>
-        </div>
-      </div>
-
-      {/* Tabs */}
-      <div className="flex px-6 border-b border-gray-100/10 mb-2">
-        {["Tokens", "Positions", "NFTs"].map((tab, i) => (
-          <div
-            key={tab}
-            className={`pb-3 px-3 text-sm font-semibold border-b-[2px] cursor-pointer transition-colors ${i === 0 ? "border-current opacity-100" : "border-transparent opacity-40 hover:opacity-70"}`}
-          >
-            {tab}
-          </div>
-        ))}
-      </div>
-
-      {/* Token List */}
-      <div className="flex-1 overflow-hidden px-4 space-y-2 pt-2">
-        {[
-          {
-            name: "USDC",
-            amount: "1,144,064.33",
-            val: "$1,144,064.33",
-            change: "+0.21%",
-            color: "bg-blue-500",
-          },
-          {
-            name: "Ethereum",
-            amount: "132.527 ETH",
-            val: "$619,809.02",
-            change: "+2.51%",
-            color: "bg-purple-500",
-          },
-          {
-            name: "Morpho",
-            amount: "150,000 MORPHO",
-            val: "$78,511.38",
-            change: "+2.01%",
-            color: "bg-indigo-500",
-          },
-          {
-            name: "Tether USD",
-            amount: "8,634 USDT",
-            val: "$8,639.64",
-            change: "+0%",
-            color: "bg-green-500",
-          },
-          {
-            name: "ENS",
-            amount: "30 ENS",
-            val: "$645.34",
-            change: "-0.31%",
-            color: "bg-blue-400",
-            negative: true,
-          },
-        ].map((token) => (
-          <div
-            key={token.name}
-            className={`flex justify-between items-center p-3 rounded-2xl ${itemHover} transition-colors`}
-          >
-            <div className="flex items-center gap-3">
-              <div
-                className={`size-10 rounded-full ${token.color} flex items-center justify-center text-white text-xs font-bold shadow-sm`}
-              >
-                {token.name[0]}
-              </div>
-              <div className="text-left">
-                <div className="text-sm font-bold">{token.name}</div>
-                <div className={`text-xs ${textMuted}`}>{token.amount}</div>
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-sm font-bold tabular-nums">{token.val}</div>
-              <div
-                className={`text-xs font-medium ${token.negative ? "text-red-500" : "text-[#00C46B]"}`}
-              >
-                {token.change}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Image
+        src={imageSrc}
+        alt={altText}
+        fill
+        className="object-cover"
+        priority
+      />
     </div>
   );
 }
@@ -209,38 +105,32 @@ export function MobileSection() {
         {/* 3. The 3-Phone Composition */}
         <div className="relative mx-auto mt-12 h-[550px] w-full max-w-5xl perspective-[2000px]">
           <div className="relative h-full w-full flex justify-center items-start pt-10">
-            {/* Left Phone
-               Z-Index: Base 10, Hover 20 (Keeps it below Center which is 30)
-            */}
+            {/* Left Phone: Staking Page */}
             <div
               className="absolute left-1/2 w-[300px] h-[600px] z-10 transition-all duration-500 ease-out origin-bottom
                             -translate-x-[290px] translate-y-[40px] -rotate-12 scale-90
                             hover:-translate-x-[320px] hover:-rotate-[15deg] hover:scale-95 hover:z-20"
             >
               <PhoneFrame className="h-full w-full opacity-90 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
-                <PhoneContent isDark={true} />
+                <PhoneScreen imageSrc="/images/staking-page-wireframe.png" altText="Staking Interface" />
               </PhoneFrame>
             </div>
 
-            {/* Right Phone
-               Z-Index: Base 10, Hover 20 (Keeps it below Center which is 30)
-            */}
+            {/* Right Phone: Vote Page */}
             <div
               className="absolute left-1/2 w-[300px] h-[600px] z-10 transition-all duration-500 ease-out origin-bottom
                             translate-x-[-10px] translate-y-[40px] rotate-12 scale-90
                             hover:translate-x-[20px] hover:rotate-[15deg] hover:scale-95 hover:z-20"
             >
               <PhoneFrame className="h-full w-full opacity-90 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
-                <PhoneContent isDark={true} />
+                <PhoneScreen imageSrc="/images/vote-page-wireframe.png" altText="Voting Interface" />
               </PhoneFrame>
             </div>
 
-            {/* Center Phone (Hero)
-               Z-Index: 30 (Always on top)
-            */}
+            {/* Center Phone (Hero): Main Dashboard */}
             <div className="absolute left-1/2 w-[320px] h-[650px] -translate-x-1/2 z-30 transition-transform duration-500 hover:scale-[1.02] hover:-translate-y-2">
               <PhoneFrame className="h-full w-full shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)] ring-4 ring-black/5">
-                <PhoneContent isDark={false} />
+                <PhoneScreen imageSrc="/images/main-page-wireframe.png" altText="Slice Main Dashboard" />
               </PhoneFrame>
             </div>
           </div>
