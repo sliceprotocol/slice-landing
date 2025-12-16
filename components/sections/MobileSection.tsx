@@ -50,18 +50,18 @@ function PhoneFrame({
 }) {
   return (
     <div
-      className={`relative rounded-[55px] bg-[#121212] p-[12px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] ring-1 ring-white/10 ${className}`}
+      className={`relative rounded-[40px] md:rounded-[55px] bg-[#121212] p-[8px] md:p-[12px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] ring-1 ring-white/10 ${className}`}
       style={style}
     >
-      <div className="absolute inset-0 rounded-[55px] border-[1px] border-white/10 pointer-events-none z-50"></div>
-      <div className="absolute top-[22px] left-1/2 -translate-x-1/2 h-[35px] w-[120px] bg-black rounded-full z-20 flex items-center justify-center pointer-events-none">
-        <div className="absolute right-[25%] size-3 rounded-full bg-[#1a1a1a] shadow-inner" />
+      <div className="absolute inset-0 rounded-[40px] md:rounded-[55px] border-[1px] border-white/10 pointer-events-none z-50"></div>
+      <div className="absolute top-[18px] md:top-[22px] left-1/2 -translate-x-1/2 h-[25px] md:h-[35px] w-[90px] md:w-[120px] bg-black rounded-full z-20 flex items-center justify-center pointer-events-none">
+        <div className="absolute right-[25%] size-2 md:size-3 rounded-full bg-[#1a1a1a] shadow-inner" />
       </div>
-      <div className="relative h-full w-full rounded-[44px] overflow-hidden bg-white shadow-[inset_0_0_0_2px_rgba(0,0,0,0.1)]">
+      <div className="relative h-full w-full rounded-[32px] md:rounded-[44px] overflow-hidden bg-white shadow-[inset_0_0_0_2px_rgba(0,0,0,0.1)]">
         {children}
       </div>
       <div
-        className="absolute inset-0 rounded-[55px] pointer-events-none bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-10 z-40"
+        className="absolute inset-0 rounded-[40px] md:rounded-[55px] pointer-events-none bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-10 z-40"
         style={{ mixBlendMode: "overlay" }}
       />
     </div>
@@ -70,11 +70,10 @@ function PhoneFrame({
 
 export function MobileSection() {
   return (
-    // CHANGE 1: Removed bottom padding (pb-0) so phones touch the next section
-    <section className="relative pt-32 pb-0 overflow-hidden bg-gradient-to-t from-gray-100 via-gray-50 to-white">
+    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden bg-gradient-to-t from-gray-100 via-gray-50 to-white">
       <div className="container relative z-10 mx-auto max-w-7xl px-6 text-center">
         {/* Header Content */}
-        <div className="mx-auto max-w-2xl mb-24">
+        <div className="mx-auto max-w-2xl mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#0D1A12] mb-4">
             Justice is a Swipe Away
           </h2>
@@ -96,15 +95,13 @@ export function MobileSection() {
         </div>
 
         {/* 3. The 3-Phone Composition */}
-        {/* CHANGE 2: Removed fixed height. We allow the phones to determine the height
-           and use -mb-[5%] to pull them slightly over the edge if needed, or 0 to sit flush. */}
         <div className="relative mx-auto w-full max-w-5xl perspective-[2000px] flex justify-center mt-auto">
-          {/* Container for absolute positioning context relative to this flex box */}
-          <div className="relative w-full h-[650px]">
+          {/* Main Scale Wrapper: Scales down everything on mobile (h-[400px]) and restores on desktop (h-[650px]) */}
+          <div className="relative w-full h-[400px] md:h-[650px] scale-[0.65] md:scale-100 origin-bottom transition-transform duration-500">
             {/* Left Phone */}
             <div
               className="absolute left-1/2 bottom-0 w-[300px] h-[600px] z-10 transition-all duration-500 ease-out origin-bottom
-                            -translate-x-[290px] translate-y-[80px] -rotate-12 scale-90
+                            -translate-x-[200px] md:-translate-x-[290px] translate-y-[60px] md:translate-y-[80px] -rotate-12 scale-90
                             hover:-translate-x-[320px] hover:-rotate-[15deg] hover:scale-95 hover:z-20"
             >
               <PhoneFrame className="h-full w-full opacity-90 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
@@ -118,7 +115,7 @@ export function MobileSection() {
             {/* Right Phone */}
             <div
               className="absolute left-1/2 bottom-0 w-[300px] h-[600px] z-10 transition-all duration-500 ease-out origin-bottom
-                            translate-x-[-10px] translate-y-[80px] rotate-12 scale-90
+                            translate-x-[-100px] md:translate-x-[-10px] translate-y-[60px] md:translate-y-[80px] rotate-12 scale-90
                             hover:translate-x-[20px] hover:rotate-[15deg] hover:scale-95 hover:z-20"
             >
               <PhoneFrame className="h-full w-full opacity-90 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
@@ -129,7 +126,7 @@ export function MobileSection() {
               </PhoneFrame>
             </div>
 
-            {/* Center Phone (Hero) - Sits exactly at bottom-0 */}
+            {/* Center Phone (Hero) */}
             <div className="absolute left-1/2 bottom-0 w-[320px] h-[650px] -translate-x-1/2 z-30 transition-transform duration-500 hover:scale-[1.02] hover:-translate-y-2">
               <PhoneFrame className="h-full w-full shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)] ring-4 ring-black/5">
                 <PhoneScreen
