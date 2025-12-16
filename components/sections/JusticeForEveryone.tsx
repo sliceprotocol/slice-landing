@@ -50,7 +50,7 @@ function FloatingPill({
 
 export function JusticeForEveryone() {
   return (
-    <section id="features" className="bg-[#FAFAFA] py-24 md:py-32">
+    <section id="solutions" className="bg-[#FAFAFA] py-24 md:py-32">
       <div className="container mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

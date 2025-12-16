@@ -160,7 +160,7 @@ function ZeroLegaleseVisual() {
 
 export function TechnicalFeatures() {
   return (
-    <section className="bg-[#050505] py-24 md:py-32">
+    <section id="mechanics" className="bg-[#050505] py-24 md:py-32">
       <div className="container mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">

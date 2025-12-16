@@ -3,7 +3,7 @@ import { Layers, Zap, Fingerprint, MousePointer2 } from "lucide-react";
 export function ChainAbstraction() {
   return (
     <section
-      id="abstraction"
+      id="chains"
       className="relative overflow-hidden bg-[#FAFAFA] py-24 text-[#0D1A12]"
     >
       {/* Background Grid Pattern */}

@@ -7,9 +7,9 @@ export const SLICE_LINKS = {
 };
 
 export const NAV_LINKS = [
-    { name: "Features", href: "#features" },
-    { name: "Controls", href: "#controls" },
-    { name: "Chains", href: "#chains" },
-    { name: "Integrations", href: "#integrations" },
+    { name: "Protocol", href: "#justice-stack" },
+    { name: "Mechanics", href: "#mechanics" },
+    { name: "Solutions", href: "#solutions" },
+    { name: "Networks", href: "#chains" },
     { name: "Developers", href: "#developers" },
 ];
