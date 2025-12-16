@@ -26,17 +26,30 @@ export function DeployAnywhere() {
           <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">Secure assets everywhere your team builds and deploys.</p>
         </div>
 
-        {/* Chain Badges */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
-          {chainBadges.map((chain) => (
+        {/* Chain Badges - Curated List */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+          {["Ethereum", "Base", "Optimism", "Arbitrum", "Polygon", "Gnosis"].map((chain, i) => (
             <div
               key={chain}
-              className="group flex items-center gap-2 rounded-full border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:border-[#12FF80] hover:text-black hover:shadow-md cursor-default"
+              className="group flex items-center gap-3 rounded-xl border border-gray-100 bg-white px-5 py-3 text-sm font-bold text-[#0D1A12] shadow-sm transition-all hover:-translate-y-1 hover:border-[#12FF80] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] cursor-default"
             >
-              <div className="size-2 rounded-full bg-[#12FF80]" />
+              {/* Simulated Chain Icons */}
+              <div className={`size-6 rounded-full flex items-center justify-center text-[10px] text-white
+                  ${chain === "Ethereum" ? "bg-[#627EEA]" : ""}
+                  ${chain === "Base" ? "bg-[#0052FF]" : ""}
+                  ${chain === "Optimism" ? "bg-[#FF0420]" : ""}
+                  ${chain === "Arbitrum" ? "bg-[#2D374B]" : ""}
+                  ${chain === "Polygon" ? "bg-[#8247E5]" : ""}
+                  ${chain === "Gnosis" ? "bg-[#04795b]" : ""}
+              `}>
+                {chain[0]}
+              </div>
               {chain}
             </div>
           ))}
+          <div className="px-4 py-2 text-sm font-semibold text-gray-400">
+            + 100 more
+          </div>
         </div>
 
         {/* Features Grid */}
