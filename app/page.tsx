@@ -12,6 +12,7 @@ import { SelfCustody } from "@/components/sections/SelfCustody";
 import { StartToday } from "@/components/sections/StartToday";
 import { TeamsSection } from "@/components/sections/TeamsSection";
 import { Wallets } from "@/components/sections/Wallets";
+import { MobileSection } from "@/components/sections/MobileSection";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <DevelopersSection />
         <StartToday />
         <Wallets />
+        <MobileSection />
         <FinalCTA />
       </main>
       <Footer />
