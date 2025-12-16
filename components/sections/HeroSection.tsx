@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Bell,
   Check,
-  X,
   Gavel,
   Award,
   TrendingUp,
@@ -13,6 +12,11 @@ import {
   Wallet,
   Settings,
   FileText,
+  ChevronLeft,
+  User,
+  Image as ImageIcon,
+  Calendar,
+  Maximize2,
 } from "lucide-react";
 
 // --- 1. Background Grid Component ---
@@ -38,86 +42,121 @@ function GridBackground() {
   );
 }
 
-// --- 2. The Refined "Juror App" UI (Phone) ---
+// --- 2. The Refined "Evidence App" UI (Phone) ---
 function HeroPhone() {
   return (
-    <div className="relative w-[300px] h-[600px] rounded-[48px] bg-white border-[8px] border-[#1a1a1a] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] overflow-hidden z-20">
+    <div className="relative w-[300px] h-[600px] rounded-[48px] bg-white border-[8px] border-[#1a1a1a] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] overflow-hidden z-20 font-sans">
       {/* Dynamic Island */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-7 w-28 bg-[#1a1a1a] rounded-b-[18px] z-20" />
 
-      {/* Screen Content */}
-      <div className="flex flex-col h-full bg-[#FAFAFA] pt-12 font-sans relative">
-        {/* Header */}
-        <div className="px-6 flex justify-between items-center mb-6">
-          <div className="flex items-center gap-2">
-            <div className="size-8 rounded-full bg-[#BC5FEF]/10 flex items-center justify-center text-[#BC5FEF]">
-              <Gavel className="size-4" />
+      {/* Screen Content - Light Gray Background for Contrast */}
+      <div className="flex flex-col h-full bg-[#F2F2F4] pt-12 relative overflow-hidden">
+        {/* Header: Back Button */}
+        <div className="px-6 pb-4 pt-2">
+          <button className="size-10 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 text-[#0D1A12] hover:bg-gray-50 transition-colors">
+            <ChevronLeft className="size-5" />
+          </button>
+        </div>
+
+        {/* Scrollable Content Area */}
+        <div className="flex-1 overflow-y-auto no-scrollbar pb-8 px-4 space-y-4">
+          {/* Timer Card */}
+          <div className="bg-white rounded-[24px] p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100">
+            <div className="flex items-center gap-2 font-bold text-[#0D1A12]">
+              <Clock className="size-5" />
+              <span className="text-sm">Time left to vote:</span>
             </div>
-            <span className="font-bold text-[#0D1A12] tracking-tight">
-              Slice Jury
+            <span className="font-mono font-bold text-[#BC5FEF] text-lg">
+              2:45h
             </span>
           </div>
-          <div className="relative">
-            <Bell className="size-5 text-gray-400" />
-            <div className="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-[#FAFAFA]" />
-          </div>
-        </div>
 
-        {/* The Dispute Card Stack */}
-        <div className="flex-1 px-4 pb-6 relative">
-          {/* Background Card (Illusion of depth) */}
-          <div className="absolute top-4 left-6 right-6 bottom-10 bg-white rounded-[24px] shadow-sm border border-gray-100 scale-95 translate-y-3 opacity-60 z-0" />
-
-          {/* Main Active Card */}
-          <div className="relative z-10 h-full bg-white rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 p-6 flex flex-col">
-            {/* Badge & Timer */}
-            <div className="flex justify-between items-start mb-4">
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 uppercase tracking-wide">
-                Crowdfunding
-              </span>
-              <span className="flex items-center gap-1 text-[10px] font-medium text-orange-500 bg-orange-50 px-2 py-1 rounded-full">
-                <Clock className="size-3" />
-                2h left
-              </span>
+          {/* Main Case Details Card */}
+          <div className="bg-white rounded-[32px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 space-y-6">
+            {/* Profile Header */}
+            <div className="flex items-center gap-4">
+              <div className="size-14 rounded-2xl bg-gray-100 overflow-hidden border border-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=faces"
+                  alt="Plaintiff"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="font-bold text-[#0D1A12] text-lg leading-tight">
+                  Project Alpha
+                </h3>
+                <div className="mt-1">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-[#F3E8FF] text-[#BC5FEF] text-[10px] font-bold uppercase tracking-wide">
+                    <User className="size-3 mr-1" /> Plaintiff
+                  </span>
+                </div>
+              </div>
             </div>
 
-            {/* Dispute Question */}
-            <h3 className="text-xl font-bold text-[#0D1A12] leading-tight mb-4">
-              Did "Project Alpha" meet the milestone requirements?
-            </h3>
-
-            {/* Evidence Snippet */}
-            <div className="bg-gray-50 rounded-xl p-4 mb-auto border border-gray-100">
-              <p className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-2">
-                Evidence Summary
-              </p>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                The prototype was delivered on time, but the API documentation
-                is missing from the repository, violating term #3 of the grant
-                agreement.
+            {/* Claim Details */}
+            <div>
+              <h4 className="text-base font-bold text-[#0D1A12] mb-2">
+                Claim Details
+              </h4>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                We delivered the prototype on Oct 15th as per the milestone
+                agreement. The client refuses to release the escrow citing
+                features not in the original spec.
               </p>
             </div>
 
-            {/* Voting Actions */}
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <button className="h-14 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-red-500 hover:bg-red-100 transition-colors">
-                <X className="size-6" />
-              </button>
-              <button className="h-14 rounded-2xl bg-green-50 border border-green-100 flex items-center justify-center text-green-500 hover:bg-green-100 transition-colors shadow-sm">
-                <Check className="size-6" />
-              </button>
+            {/* Evidence Section */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="text-base font-bold text-[#0D1A12]">Evidence</h4>
+                <span className="bg-[#F3E8FF] text-[#BC5FEF] text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1.5">
+                  <ImageIcon className="size-3" /> Images
+                </span>
+              </div>
+
+              {/* Horizontal Scroll Evidence Gallery */}
+              <div className="flex gap-3 overflow-x-auto pb-2 -mx-2 px-2 scrollbar-hide">
+                {/* Evidence 1 */}
+                <div className="relative w-40 h-28 flex-shrink-0 rounded-2xl bg-gray-100 overflow-hidden border border-gray-200 group cursor-pointer hover:opacity-90 transition-opacity">
+                  <img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"
+                    alt="Dashboard Evidence"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-lg shadow-sm border border-gray-100">
+                    <Maximize2 className="size-3.5 text-black" />
+                  </div>
+                </div>
+                {/* Evidence 2 */}
+                <div className="relative w-40 h-28 flex-shrink-0 rounded-2xl bg-gray-100 overflow-hidden border border-gray-200 group cursor-pointer hover:opacity-90 transition-opacity">
+                  <img
+                    src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop"
+                    alt="Code Evidence"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm p-1.5 rounded-lg shadow-sm border border-gray-100">
+                    <Maximize2 className="size-3.5 text-black" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Date Tag */}
+              <div className="mt-4 inline-flex items-center gap-2 bg-[#FAFAFA] px-3 py-2 rounded-xl border border-gray-100 w-full">
+                <Calendar className="size-4 text-gray-400" />
+                <span className="text-xs font-semibold text-gray-500">
+                  Submitted: 10/24/2025
+                </span>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom Nav Indicator */}
-        <div className="h-1 w-1/3 bg-gray-300 rounded-full mx-auto mb-2" />
       </div>
     </div>
   );
 }
 
-// --- 3. The Refined "Juror Dashboard" UI (Desktop) ---
+// --- 3. The Original "Juror Dashboard" UI (Desktop) ---
 function HeroDashboard() {
   return (
     <div className="w-[1050px] bg-white rounded-[24px] border border-gray-200/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] overflow-hidden flex font-sans">

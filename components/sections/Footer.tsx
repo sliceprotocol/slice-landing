@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Github, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SLICE_LINKS } from "@/lib/constants";
 
 // Custom X (Twitter) Icon since Lucide's might differ slightly
 const XIcon = ({ className }: { className?: string }) => (
@@ -39,15 +40,19 @@ export function Footer() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button className="h-14 px-8 rounded-full bg-[#BC5FEF] text-white text-lg font-bold hover:bg-[#a040d0] shadow-[0_0_40px_rgba(188,95,239,0.3)] transition-all hover:-translate-y-1">
-              Start Judging
-            </Button>
-            <Button
-              variant="ghost"
-              className="h-14 px-8 rounded-full border border-white/10 bg-white/5 text-lg font-bold text-white hover:bg-white/10"
-            >
-              Read the Docs <ArrowRight className="ml-2 size-5" />
-            </Button>
+            <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer">
+              <Button className="h-14 px-8 rounded-full bg-[#BC5FEF] text-white text-lg font-bold hover:bg-[#a040d0] shadow-[0_0_40px_rgba(188,95,239,0.3)] transition-all hover:-translate-y-1">
+                Start Judging
+              </Button>
+            </Link>
+            <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="ghost"
+                className="h-14 px-8 rounded-full border border-white/10 bg-white/5 text-lg font-bold text-white hover:bg-white/10"
+              >
+                Read the Docs <ArrowRight className="ml-2 size-5" />
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -76,22 +81,22 @@ export function Footer() {
             <h4 className="text-sm font-medium text-gray-500">Product</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Juror Dashboard
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={`${SLICE_LINKS.APP}/staking`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Staking
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={`${SLICE_LINKS.APP}/disputes`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Disputes
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Governance
                 </Link>
               </li>
@@ -102,17 +107,17 @@ export function Footer() {
             <h4 className="text-sm font-medium text-gray-500">Solutions</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   For Protocols
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   For Marketplaces
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   For DAOs
                 </Link>
               </li>
@@ -123,22 +128,22 @@ export function Footer() {
             <h4 className="text-sm font-medium text-gray-500">Company</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Imprint
                 </Link>
               </li>
@@ -149,22 +154,22 @@ export function Footer() {
             <h4 className="text-sm font-medium text-gray-500">Resources</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   FAQs
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Help centre
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Terms
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Privacy
                 </Link>
               </li>
@@ -175,12 +180,12 @@ export function Footer() {
             <h4 className="text-sm font-medium text-gray-500">Social</h4>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.X} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   X (Twitter)
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link href={SLICE_LINKS.GITHUB} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Github
                 </Link>
               </li>
@@ -192,21 +197,28 @@ export function Footer() {
         <div className="mt-20 flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-8 md:flex-row">
           <div className="flex gap-4">
             <Link
-              href="#"
+              href={SLICE_LINKS.X}
+              target="_blank" rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors"
             >
               <XIcon className="h-5 w-5" />
             </Link>
             <Link
-              href="#"
+              href={SLICE_LINKS.GITHUB}
+              target="_blank" rel="noopener noreferrer"
               className="text-gray-500 hover:text-white transition-colors"
             >
               <Github className="h-5 w-5" />
             </Link>
           </div>
-          <p className="text-sm text-gray-600">
-            © 2025 Slice Protocol. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center md:items-end">
+            <p className="text-sm text-gray-600">
+              © 2025 Slice Protocol. All rights reserved.
+            </p>
+            <p className="text-xs text-gray-700 mt-1">
+              {SLICE_LINKS.SOCIAL_HANDLE}
+            </p>
+          </div>
         </div>
       </div>
 

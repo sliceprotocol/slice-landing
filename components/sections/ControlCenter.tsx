@@ -160,7 +160,7 @@ function EvidenceUI() {
 
 export function ControlCenter() {
   return (
-    <section className="bg-black text-white py-32">
+    <section id="controls" className="bg-black text-white py-32">
       <div className="container mx-auto max-w-6xl px-6">
         {/* Section Header */}
         <div className="text-center mb-16">

@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Terminal, FileCode2, Braces, Layers } from "lucide-react";
+import Link from "next/link";
+import { SLICE_LINKS } from "@/lib/constants";
 
 // --- Visual Components ---
 
@@ -163,12 +165,16 @@ export function DevelopersSection() {
             </div>
 
             <div className="flex gap-4">
-              <Button className="h-12 px-6 rounded-full bg-black text-white font-bold hover:bg-gray-800 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
-                Read the Docs
-              </Button>
-              <Button variant="outline" className="h-12 px-6 rounded-full border-gray-200 font-bold hover:bg-gray-50">
-                Github
-              </Button>
+              <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer">
+                <Button className="h-12 px-6 rounded-full bg-black text-white font-bold hover:bg-gray-800 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+                  Read the Docs
+                </Button>
+              </Link>
+              <Link href={SLICE_LINKS.GITHUB} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="h-12 px-6 rounded-full border-gray-200 font-bold hover:bg-gray-50">
+                  Github
+                </Button>
+              </Link>
             </div>
           </div>
 

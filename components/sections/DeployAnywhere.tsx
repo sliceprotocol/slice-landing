@@ -2,7 +2,7 @@ import { Layers, Zap, Network, Share2, Fingerprint, MousePointer2 } from "lucide
 
 export function DeployAnywhere() {
   return (
-    <section id="ecosystem" className="relative overflow-hidden bg-[#FAFAFA] py-24 text-[#0D1A12]">
+    <section id="chains" className="relative overflow-hidden bg-[#FAFAFA] py-24 text-[#0D1A12]">
       {/* Background Grid Pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.4]"

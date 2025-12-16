@@ -5,17 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
+import { NAV_LINKS, SLICE_LINKS } from "@/lib/constants";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { name: "Features", href: "#features" },
-    { name: "Controls", href: "#controls" },
-    { name: "Chains", href: "#chains" },
-    { name: "Integrations", href: "#integrations" },
-    { name: "Developers", href: "#developers" },
-  ];
 
   return (
     <div className="fixed top-6 inset-x-0 z-50 flex flex-col items-center pointer-events-none px-6">
@@ -40,11 +33,15 @@ export default function Navigation() {
 
           {/* Desktop Nav Links */}
           <div className="hidden items-center gap-6 text-sm font-medium text-[#0D1A12] md:flex">
-            {navLinks.map((item) => (
+            {NAV_LINKS.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className="hover:text-[#BC5FEF] transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {item.name}
               </Link>
@@ -54,12 +51,19 @@ export default function Navigation() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-2">
-          <Link href="#docs" className="hidden px-4 py-2 text-sm font-semibold text-[#0D1A12] hover:text-[#BC5FEF] transition-colors sm:inline">
+          <Link
+            href={SLICE_LINKS.DOCS}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden px-4 py-2 text-sm font-semibold text-[#0D1A12] hover:text-[#BC5FEF] transition-colors sm:inline"
+          >
             Docs
           </Link>
-          <Button className="h-10 rounded-full bg-black hover:bg-[#BC5FEF] text-white px-5 text-sm font-bold shadow-lg transition-all hover:scale-105 hidden sm:flex border border-white/10">
-            Launch App <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer">
+            <Button className="h-10 rounded-full bg-black hover:bg-[#BC5FEF] text-white px-5 text-sm font-bold shadow-lg transition-all hover:scale-105 hidden sm:flex border border-white/10">
+              Launch App <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -75,27 +79,35 @@ export default function Navigation() {
       {isMobileMenuOpen && (
         <div className="pointer-events-auto w-full max-w-5xl mt-2 rounded-[32px] border border-white/20 bg-white/60 backdrop-blur-xl shadow-[0_15px_60px_rgba(0,0,0,0.12)] p-4 animate-in slide-in-from-top-2 fade-in duration-200">
           <div className="flex flex-col gap-1">
-            {navLinks.map((item) => (
+            {NAV_LINKS.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className="px-4 py-3 text-lg font-medium text-[#0D1A12] rounded-xl hover:bg-black/5 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMobileMenuOpen(false);
+                  document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {item.name}
               </Link>
             ))}
             <div className="h-px bg-gray-100 my-2" />
             <Link
-              href="#docs"
+              href={SLICE_LINKS.DOCS}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-3 text-lg font-medium text-[#0D1A12] rounded-xl hover:bg-black/5 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Documentation
             </Link>
-            <Button className="w-full mt-2 h-12 rounded-xl bg-black hover:bg-[#BC5FEF] text-white text-base font-bold shadow-lg">
-              Launch App <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer" className="w-full">
+              <Button className="w-full mt-2 h-12 rounded-xl bg-black hover:bg-[#BC5FEF] text-white text-base font-bold shadow-lg">
+                Launch App <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       )}

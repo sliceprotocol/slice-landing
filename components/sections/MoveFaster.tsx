@@ -7,6 +7,8 @@ import {
   Users,
   Code2,
 } from "lucide-react";
+import Link from "next/link";
+import { SLICE_LINKS } from "@/lib/constants";
 
 // 1. Reusable Pill Component for the Right Card
 function FloatingPill({
@@ -33,7 +35,7 @@ function FloatingPill({
 
 export function MoveFaster() {
   return (
-    <section className="bg-[#FAFAFA] py-32">
+    <section id="features" className="bg-[#FAFAFA] py-32">
       <div className="container mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -65,9 +67,11 @@ export function MoveFaster() {
                 Join the decentralized court. Stake tokens, review evidence, and
                 get paid for honest rulings.
               </p>
-              <button className="flex items-center gap-2 text-[#BC5FEF] font-bold text-sm hover:gap-3 transition-all">
-                Join the Jury <ArrowRight className="size-4" />
-              </button>
+              <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer">
+                <button className="flex items-center gap-2 text-[#BC5FEF] font-bold text-sm hover:gap-3 transition-all">
+                  Join the Jury <ArrowRight className="size-4" />
+                </button>
+              </Link>
             </div>
 
             {/* Abstract Visuals (Bottom Right) */}
@@ -105,9 +109,11 @@ export function MoveFaster() {
                 Plug-and-play dispute resolution for your protocol. <br />
                 Secure your escrows, grants, and markets with a neutral oracle.
               </p>
-              <button className="flex items-center gap-2 text-[#BC5FEF] font-bold text-sm hover:gap-3 transition-all">
-                Read the Docs <ArrowRight className="size-4" />
-              </button>
+              <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer">
+                <button className="flex items-center gap-2 text-[#BC5FEF] font-bold text-sm hover:gap-3 transition-all">
+                  Read the Docs <ArrowRight className="size-4" />
+                </button>
+              </Link>
             </div>
 
             {/* Floating Pills Visuals - Slice Use Cases */}
