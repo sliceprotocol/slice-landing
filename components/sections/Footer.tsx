@@ -45,7 +45,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="h-14 px-8 rounded-full bg-primary text-white text-lg font-bold hover:bg-[#a040d0] shadow-[0_0_40px_var(--primary)] transition-all hover:-translate-y-1">
+              <Button className="h-14 px-8 rounded-full bg-primary text-white text-lg font-bold hover:bg-[#a040d0] shadow-[0_0_40px_var(--primary)] transition-colors">
                 Start Judging
               </Button>
             </Link>

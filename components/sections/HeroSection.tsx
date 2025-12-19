@@ -35,8 +35,6 @@ export function HeroSection() {
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[#0D1A12] mb-6 leading-[1.1]">
             Get paid to <br />
             <span className="relative inline-block">
-              {/* Highlight box behind text */}
-              <span className="absolute inset-0 bg-primary -rotate-1 skew-x-3 opacity-40 blur-sm rounded-lg -z-10" />
               deliver justice
             </span>
           </h1>
@@ -50,7 +48,7 @@ export function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="h-14 px-12 rounded-full bg-[#1A1025] text-white text-lg font-bold hover:bg-[#2a1a3a] shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+              <Button className="h-14 px-12 rounded-full bg-[#1A1025] text-white text-lg font-bold hover:bg-[#2a1a3a] shadow-xl hover:shadow-2xl transition-all">
                 Start Judging <ArrowRight className="ml-2 size-5" />
               </Button>
             </Link>
@@ -75,7 +73,7 @@ export function HeroSection() {
           <div
             className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2
                           scale-[0.6] sm:scale-[0.7] md:scale-[0.8] lg:scale-100
-                          transition-transform duration-700 hover:scale-[0.62] sm:hover:scale-[0.72] md:hover:scale-[0.82] lg:hover:scale-[1.02] hover:-translate-y-2 origin-top shadow-2xl"
+                          origin-top shadow-2xl"
           >
             <HeroDashboard />
           </div>
@@ -84,9 +82,7 @@ export function HeroSection() {
           <div
             className="absolute top-16 sm:top-24 left-1/2 -translate-x-1/2 md:left-[8%] md:translate-x-0
                           scale-[0.9] sm:scale-[0.92] md:scale-[0.95] lg:scale-100
-                          origin-top md:origin-top-left transition-transform duration-700
-                          hover:-translate-y-4 hover:rotate-[-2deg] z-30
-                          ml-[-10px] md:ml-0"
+                          origin-center z-30 pointer-events-auto"
           >
             <HeroPhone />
           </div>
@@ -119,15 +115,15 @@ function GridBackground() {
 // --- 2. The Refined "Evidence App" UI (Phone) ---
 function HeroPhone() {
   return (
-    <div className="relative w-[300px] h-[600px] rounded-[48px] bg-white border-[8px] border-[#1a1a1a] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] overflow-hidden z-20 font-sans">
+    <div className="relative w-[300px] h-[600px] rounded-[48px] bg-white border-[8px] border-[#1a1a1a] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] overflow-hidden font-sans pointer-events-none">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-7 w-28 bg-[#1a1a1a] rounded-b-[18px] z-20" />
       <div className="flex flex-col h-full bg-[#F2F2F4] pt-12 relative overflow-hidden">
         <div className="px-6 pb-4 pt-2">
-          <button className="size-10 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 text-[#0D1A12] hover:bg-gray-50 transition-colors">
+          <button className="size-10 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 text-[#0D1A12]">
             <ChevronLeft className="size-5" />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto no-scrollbar pb-8 px-4 space-y-4">
+        <div className="flex-1 overflow-hidden pb-8 px-4 space-y-4">
           <div className="bg-white rounded-[24px] p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100">
             <div className="flex items-center gap-2 font-bold text-[#0D1A12]">
               <Clock className="size-5" />
@@ -285,7 +281,7 @@ function HeroDashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 bg-[#FAFAFA] p-10 flex flex-col overflow-y-auto">
+      <div className="flex-1 bg-[#FAFAFA] p-10 flex flex-col overflow-hidden">
         <div className="flex justify-between items-end mb-10">
           <div>
             <h2 className="text-3xl font-extrabold text-[#0D1A12] tracking-tight mb-2">
@@ -295,7 +291,7 @@ function HeroDashboard() {
               Manage your stakes, review cases, and earn rewards.
             </p>
           </div>
-          <Button className="rounded-full bg-[#0D1A12] text-white px-6 h-11 font-bold shadow-lg hover:bg-gray-800 transition-transform hover:-translate-y-0.5">
+          <Button className="rounded-full bg-[#0D1A12] text-white px-6 h-11 font-bold shadow-lg hover:bg-gray-800 transition-colors">
             Staking Pool
           </Button>
         </div>

@@ -194,7 +194,7 @@ export function AppsSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="h-12 px-6 rounded-lg bg-primary text-white font-bold shadow-[0_4px_14px_var(--primary)] transition-transform hover:-translate-y-0.5 w-full sm:w-auto">
+            <Button className="h-12 px-6 rounded-lg bg-primary text-white font-bold shadow-[0_4px_14px_var(--primary)] transition-colors w-full sm:w-auto">
               Start Judging
             </Button>
           </Link>

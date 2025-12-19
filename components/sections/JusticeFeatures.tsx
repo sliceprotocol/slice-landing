@@ -104,7 +104,7 @@ export function JusticeFeatures() {
               </div>
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/[0.01] to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500" />
             </div>
           ))}
         </div>

@@ -166,7 +166,7 @@ export function DevelopersSection() {
 
             <div className="flex gap-4">
               <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer">
-                <Button className="h-12 px-6 rounded-full bg-black text-white font-bold hover:bg-gray-800 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+                <Button className="h-12 px-6 rounded-full bg-black text-white font-bold hover:bg-gray-800 shadow-xl hover:shadow-2xl transition-all">
                   Read the Docs
                 </Button>
               </Link>

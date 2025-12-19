@@ -83,11 +83,11 @@ export function MobileSection() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-all hover:-translate-y-0.5">
+            <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-colors">
               <Apple className="mr-2 h-5 w-5" />
               Download on iOS
             </Button>
-            <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-all hover:-translate-y-0.5">
+            <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-colors">
               <Play className="mr-2 h-5 w-5 fill-current" />
               Download on Android
             </Button>
