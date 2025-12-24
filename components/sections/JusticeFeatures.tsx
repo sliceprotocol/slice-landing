@@ -53,14 +53,14 @@ export function JusticeFeatures() {
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
             Complexity Hidden, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40">
               Truth Revealed.
             </span>
           </h2>
 
-          <p className="max-w-2xl text-xl text-zinc-400 leading-relaxed">
+          <p className="max-w-2xl text-lg text-zinc-400 leading-relaxed">
             Slice replaces expensive legal intermediaries with code. We combine
             cryptography, game theory, and smart contracts to create a dispute
             resolution system that is faster, cheaper, and fairer.
@@ -104,7 +104,7 @@ export function JusticeFeatures() {
               </div>
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/[0.01] to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500" />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500" />
             </div>
           ))}
         </div>

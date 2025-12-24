@@ -45,7 +45,7 @@ function BentoCard({
       </div>
 
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/2 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </div>
   );
 }
@@ -164,13 +164,13 @@ export function TechnicalFeatures() {
       <div className="container mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
             The Courtroom <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
               in Your Pocket
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
             A strategy game where your move is the truth. Stake tokens, vote
             privately, and reveal to win.
           </p>

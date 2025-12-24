@@ -20,6 +20,10 @@ export default function Navigation() {
           <Link
             href="/"
             className="flex items-center gap-2 rounded-full border border-gray-100 bg-white px-3 py-1.5 text-sm font-bold text-[#0d1a12] shadow-sm transition-transform hover:scale-105"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
           >
             <Image
               src="/icons/slice-logo-transparent.svg"
@@ -36,11 +40,17 @@ export default function Navigation() {
             {NAV_LINKS.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={item.href === "#" ? "#" : item.href}
                 className="hover:text-primary transition-colors"
                 onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                  if (item.href === "#") {
+                    e.preventDefault();
+                  } else if (item.href.startsWith("#")) {
+                    e.preventDefault();
+                    document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                  } else if (item.href.startsWith("http")) {
+                    // External links are handled by the href, no preventDefault needed
+                  }
                 }}
               >
                 {item.name}
@@ -51,17 +61,9 @@ export default function Navigation() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-2">
-          <Link
-            href={SLICE_LINKS.DOCS}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden px-4 py-2 text-sm font-semibold text-[#0D1A12] hover:text-primary transition-colors sm:inline"
-          >
-            Docs
-          </Link>
           <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer">
-            <Button className="h-10 rounded-full bg-black hover:bg-primary text-white px-5 text-sm font-bold shadow-lg transition-all hover:scale-105 hidden sm:flex border border-white/10">
-              Launch App <ArrowRight className="ml-2 h-4 w-4" />
+            <Button className="h-10 rounded-full bg-black hover:bg-primary text-white px-5 text-sm font-bold shadow-lg transition-colors hidden sm:flex border border-white/10">
+              Launch Demo<ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
 
@@ -82,30 +84,26 @@ export default function Navigation() {
             {NAV_LINKS.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={item.href === "#" ? "#" : item.href}
                 className="px-4 py-3 text-lg font-medium text-[#0D1A12] rounded-xl hover:bg-black/5 transition-colors"
                 onClick={(e) => {
-                  e.preventDefault();
                   setIsMobileMenuOpen(false);
-                  document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                  if (item.href === "#") {
+                    e.preventDefault();
+                  } else if (item.href.startsWith("#")) {
+                    e.preventDefault();
+                    document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+                  } else if (item.href.startsWith("http")) {
+                    // External links are handled by the href, no preventDefault needed
+                  }
                 }}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="h-px bg-gray-100 my-2" />
-            <Link
-              href={SLICE_LINKS.DOCS}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-3 text-lg font-medium text-[#0D1A12] rounded-xl hover:bg-black/5 transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Documentation
-            </Link>
             <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer" className="w-full">
               <Button className="w-full mt-2 h-12 rounded-xl bg-black hover:bg-primary text-white text-base font-bold shadow-lg">
-                Launch App <ArrowRight className="ml-2 h-4 w-4" />
+                Launch App (Mainnet Demo) <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>

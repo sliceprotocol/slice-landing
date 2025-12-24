@@ -9,6 +9,8 @@ import { SecurityGuarantees } from "@/components/sections/SecurityGuarantees";
 import { MobileSection } from "@/components/sections/MobileSection";
 import { JusticeFeatures } from "@/components/sections/JusticeFeatures";
 import { TechnicalFeatures } from "@/components/sections/TechnicalFeatures";
+import { BusinessUseCases } from "@/components/sections/BusinessUseCases";
+import { SliceForBusiness } from "@/components/sections/SliceForBusiness";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Navigation />
       <main className="overflow-hidden">
         <HeroSection />
+        <SliceForBusiness />
+        <BusinessUseCases />
         <JusticeFeatures />
         <TechnicalFeatures />
         <ChainAbstraction />

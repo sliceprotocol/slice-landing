@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { SLICE_LINKS } from "@/lib/constants";
 import {
@@ -28,51 +31,50 @@ export function HeroSection() {
 
       <div className="container relative z-10 mx-auto px-6 max-w-7xl">
         {/* 1. Hero Copy */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <h4 className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-6">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h4 className="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-8 mt-8">
             The Standard for Decentralized Justice
           </h4>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-[#0D1A12] mb-6 leading-[1.1]">
-            Get paid to <br />
-            <span className="relative inline-block">
-              deliver justice
-            </span>
+          <h1 className="text-5xl md:text-[3.5rem] font-extrabold tracking-[-2px] text-[#0D1A12] mb-6 leading-[1.1]">
+            Dispute resolution <br />for digital platforms
           </h1>
-          <p className="text-xl text-gray-500 max-w-3xl mx-auto mb-10">
-            Join the jury. Review disputes from crowdfunding to escrows. Earn
-            rewards in a gamified, on-chain court.
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10">
+            Resolve payments, escrow, and agreement disputes with an independent, on-chain jury without building arbitration in-house.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href={SLICE_LINKS.APP}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button className="h-14 px-12 rounded-full bg-[#1A1025] text-white text-lg font-bold hover:bg-[#2a1a3a] shadow-xl hover:shadow-2xl transition-all">
-                Start Judging <ArrowRight className="ml-2 size-5" />
-              </Button>
-            </Link>
             <Link
               href={SLICE_LINKS.DOCS}
               target="_blank"
               rel="noopener noreferrer"
             >
+              <Button className="h-12 px-12 gap-2 rounded-full bg-[#1A1025] text-white text-base font-bold hover:bg-primary transition-colors min-w-[180px] group">
+                Integrate Slice <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+            <Link
+              href="#mobile"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#mobile')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               <Button
                 variant="outline"
-                className="h-14 px-8 rounded-full border-gray-200 text-gray-600 text-lg font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 bg-white/50 backdrop-blur-sm"
+                className="h-12 px-6 rounded-full border-gray-200 text-gray-600 text-base font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 bg-white/50 backdrop-blur-sm"
               >
-                How it Works
+                Start Judging 
               </Button>
             </Link>
           </div>
         </div>
 
         {/* 2. Overlapping UI Composition (RESPONSIVE FIX) */}
-        <div className="relative h-[500px] sm:h-[600px] md:h-[650px] w-full flex justify-center mt-12 perspective-[2000px]">
+        <div className="relative h-[500px] sm:h-[600px] md:h-[650px] w-full flex justify-center mt-8 perspective-[2000px]">
           {/* Desktop Dashboard (Back Layer) */}
           <div
             className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2
-                          scale-[0.6] sm:scale-[0.7] md:scale-[0.8] lg:scale-100
+                          md:left-1/2 md:-translate-x-[450px]
+                          scale-[0.6] sm:scale-[0.7] md:scale-[0.75] lg:scale-[0.9]
                           origin-top shadow-2xl"
           >
             <HeroDashboard />
@@ -80,9 +82,10 @@ export function HeroSection() {
 
           {/* Mobile Phone (Front Layer - Offset Left) */}
           <div
-            className="absolute top-16 sm:top-24 left-1/2 -translate-x-1/2 md:left-[8%] md:translate-x-0
-                          scale-[0.9] sm:scale-[0.92] md:scale-[0.95] lg:scale-100
-                          origin-center z-30 pointer-events-auto"
+            className="absolute top-16 sm:top-18 left-1/2 -translate-x-1/2 
+                          md:left-1/2 md:-translate-x-[500px]
+                          scale-[0.9] sm:scale-[0.92] md:scale-[0.9] lg:scale-[0.9]
+                          origin-center z-30"
           >
             <HeroPhone />
           </div>
@@ -114,8 +117,45 @@ function GridBackground() {
 
 // --- 2. The Refined "Evidence App" UI (Phone) ---
 function HeroPhone() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrollContainerRef.current) return;
+      
+      // Get scroll position relative to hero section
+      const heroSection = document.querySelector('section');
+      if (!heroSection) return;
+      
+      const rect = heroSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Calculate scroll progress (0 to 1) when hero section is in viewport
+      let scrollProgress = 0;
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        scrollProgress = Math.max(0, Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)));
+      }
+      
+      // Animate scroll: max scroll is the difference between scrollHeight and clientHeight
+      const container = scrollContainerRef.current;
+      const maxScroll = container.scrollHeight - container.clientHeight;
+      const targetScroll = scrollProgress * maxScroll * 0.3; // Limit to 30% of max scroll for subtle effect
+      
+      container.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="relative w-[300px] h-[600px] rounded-[48px] bg-white border-[8px] border-[#1a1a1a] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] overflow-hidden font-sans pointer-events-none">
+    <div className="relative w-[300px] h-[600px] rounded-[48px] bg-white border-[8px] border-[#1a1a1a] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] overflow-hidden font-sans">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-7 w-28 bg-[#1a1a1a] rounded-b-[18px] z-20" />
       <div className="flex flex-col h-full bg-[#F2F2F4] pt-12 relative overflow-hidden">
         <div className="px-6 pb-4 pt-2">
@@ -123,7 +163,14 @@ function HeroPhone() {
             <ChevronLeft className="size-5" />
           </button>
         </div>
-        <div className="flex-1 overflow-hidden pb-8 px-4 space-y-4">
+        <div 
+          ref={scrollContainerRef} 
+          className="flex-1 overflow-y-auto scrollbar-hide pb-8 px-4 space-y-4"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          } as React.CSSProperties}
+        >
           <div className="bg-white rounded-[24px] p-5 flex items-center justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100">
             <div className="flex items-center gap-2 font-bold text-[#0D1A12]">
               <Clock className="size-5" />
@@ -200,6 +247,26 @@ function HeroPhone() {
               </div>
             </div>
           </div>
+          
+          {/* Additional content for scroll effect */}
+          <div className="bg-white rounded-[32px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 space-y-4">
+            <h4 className="text-base font-bold text-[#0D1A12]">Additional Evidence</h4>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Additional documentation and screenshots have been provided to support the claim.
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-[32px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 space-y-4">
+            <h4 className="text-base font-bold text-[#0D1A12]">Voting Options</h4>
+            <div className="space-y-2">
+              <button className="w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                <span className="font-semibold text-[#0D1A12]">Favor Plaintiff</span>
+              </button>
+              <button className="w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                <span className="font-semibold text-[#0D1A12]">Favor Defendant</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -209,9 +276,9 @@ function HeroPhone() {
 // --- 3. The Professional Juror Dashboard UI ---
 function HeroDashboard() {
   return (
-    <div className="w-[1100px] h-[680px] bg-white rounded-[32px] border border-gray-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.12)] overflow-hidden flex font-sans">
+    <div className="w-[1000px] h-[650px] bg-white rounded-[32px] border border-gray-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.12)] overflow-hidden flex font-sans">
       {/* Sidebar */}
-      <div className="w-[260px] bg-white border-r border-gray-100 flex flex-col p-6">
+      <div className="w-[240px] bg-white border-r border-gray-100 flex flex-col p-6 rounded-l-[32px]">
         <div className="flex items-center gap-3 mb-12 pl-2">
           {/* Logo Container */}
           <div className="size-9 bg-black rounded-xl flex items-center justify-center shadow-lg shadow-purple-200">
@@ -281,7 +348,7 @@ function HeroDashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 bg-[#FAFAFA] p-10 flex flex-col overflow-hidden">
+      <div className="flex-1 bg-[#FAFAFA] p-10 flex flex-col overflow-hidden rounded-r-[32px]">
         <div className="flex justify-between items-end mb-10">
           <div>
             <h2 className="text-3xl font-extrabold text-[#0D1A12] tracking-tight mb-2">
@@ -291,7 +358,7 @@ function HeroDashboard() {
               Manage your stakes, review cases, and earn rewards.
             </p>
           </div>
-          <Button className="rounded-full bg-[#0D1A12] text-white px-6 h-11 font-bold shadow-lg hover:bg-gray-800 transition-colors">
+          <Button className="rounded-full bg-[#0D1A12] text-white px-6 h-11 font-bold shadow-lg hover:bg-primary transition-colors">
             Staking Pool
           </Button>
         </div>

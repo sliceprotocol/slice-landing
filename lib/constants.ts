@@ -1,15 +1,14 @@
 export const SLICE_LINKS = {
     GITHUB: "https://github.com/slicehub",
-    DOCS: "https://www.notion.so/Slice-2cbef6d5d22380db9afafb5d22c62e71?source=copy_link",
+    DOCS: "https://docs.slicehub.xyz/",
     APP: "https://app.slicehub.xyz",
-    X: "https://x.com/slicehub_app",
-    SOCIAL_HANDLE: "@slicehub_app",
+    X: "https://x.com/slicehub_xyz",
+    SOCIAL_HANDLE: "@slicehub_xyz",
 };
 
 export const NAV_LINKS = [
-    { name: "Protocol", href: "#justice-stack" },
-    { name: "Mechanics", href: "#mechanics" },
-    { name: "Solutions", href: "#solutions" },
-    { name: "Networks", href: "#chains" },
+    { name: "Product", href: "#" },
+    { name: "Slice for Business", href: "#" },
     { name: "Developers", href: "#developers" },
+    { name: "Docs", href: "https://docs.slicehub.xyz/" },
 ];

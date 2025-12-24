@@ -139,13 +139,13 @@ export function DevelopersSection() {
               <span>Format. TypeScript</span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1]">
               Built for <br />
               any <br />
               <span className="text-primary drop-shadow-sm selection:bg-primary selection:text-white">Protocol</span>
             </h2>
 
-            <p className="text-xl text-gray-500 mb-10 max-w-lg leading-relaxed">
+            <p className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed">
               Escrows, Freelance Markets, and DAOs use Slice to resolve disagreements in real time.
             </p>
 
@@ -166,7 +166,7 @@ export function DevelopersSection() {
 
             <div className="flex gap-4">
               <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer">
-                <Button className="h-12 px-6 rounded-full bg-black text-white font-bold hover:bg-gray-800 shadow-xl hover:shadow-2xl transition-all">
+                <Button className="h-12 px-6 rounded-full bg-black text-white font-bold hover:bg-primary shadow-xl hover:shadow-2xl transition-colors">
                   Read the Docs
                 </Button>
               </Link>

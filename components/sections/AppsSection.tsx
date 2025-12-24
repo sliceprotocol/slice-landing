@@ -168,10 +168,10 @@ export function AppsSection() {
       </div>
 
       <div className="container relative z-20 mx-auto max-w-4xl px-6 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0D1A12] mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1A12] mb-6 tracking-tight">
           From Grants to Gigs, <br /> It's All Covered
         </h2>
-        <p className="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
+        <p className="text-base text-gray-500 mb-10 max-w-xl mx-auto">
           Crowdfunding, Freelance Markets, Prediction Pools, and Escrows.
           Resolve any on-chain dispute with Slice protocol.
         </p>
@@ -194,7 +194,7 @@ export function AppsSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="h-12 px-6 rounded-lg bg-primary text-white font-bold shadow-[0_4px_14px_var(--primary)] transition-colors w-full sm:w-auto">
+            <Button className="h-12 px-6 rounded-lg bg-primary text-white font-bold shadow-[0_4px_14px_var(--primary)] transition-transform hover:-translate-y-0.5 w-full sm:w-auto">
               Start Judging
             </Button>
           </Link>

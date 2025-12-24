@@ -54,10 +54,10 @@ export function JusticeForEveryone() {
       <div className="container mx-auto max-w-7xl px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0D1A12] mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0D1A12] mb-6 tracking-tight">
             Justice for Everyone
           </h2>
-          <p className="text-lg text-gray-500">
+          <p className="text-base text-gray-500">
             Whether you want to{" "}
             <span className="bg-purple-100 text-purple-700 px-1 rounded font-medium">
               earn yield
@@ -68,9 +68,9 @@ export function JusticeForEveryone() {
         </div>
 
         {/* The Two-Card Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-auto lg:h-[500px]">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* --- Left Card: For Jurors --- */}
-          <div className="lg:col-span-2 relative overflow-hidden rounded-[32px] bg-[#0C110F] p-8 md:p-12 flex flex-col justify-between group border border-gray-800/50 min-h-[400px] lg:min-h-0">
+          <div className="lg:col-span-2 relative overflow-hidden rounded-[32px] bg-[#0C110F] p-8 md:p-12 flex flex-col justify-between group border border-gray-800/50 min-h-[400px] lg:min-h-[500px]">
             {/* Content */}
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
@@ -112,9 +112,9 @@ export function JusticeForEveryone() {
           </div>
 
           {/* --- Right Card: For Builders --- */}
-          <div className="lg:col-span-3 relative overflow-hidden rounded-[32px] bg-[#0C110F] p-8 md:p-12 flex flex-col group border border-gray-800/50">
-            {/* Content */}
-            <div className="relative z-10 mb-8 lg:mb-auto">
+          <div className="lg:col-span-3 relative overflow-hidden rounded-[32px] bg-[#0C110F] p-8 md:p-12 flex flex-col justify-between group border border-gray-800/50 min-h-[400px] lg:min-h-[500px]">
+            {/* Content Section */}
+            <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
                 <Code2 className="size-3" />
                 Integrate Instantly
@@ -122,9 +122,9 @@ export function JusticeForEveryone() {
               <h3 className="text-3xl font-bold text-white mb-3">
                 For Builders
               </h3>
-              <p className="text-gray-400 mb-6 max-w-md">
-                Plug-and-play dispute resolution for your protocol. <br />
-                Secure your escrows, grants, and markets with a neutral oracle.
+              <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
+                Plug-and-play dispute resolution for your protocol. Secure your
+                escrows, grants, and markets with a neutral oracle.
               </p>
               <Link
                 href={SLICE_LINKS.DOCS}
@@ -137,47 +137,36 @@ export function JusticeForEveryone() {
               </Link>
             </div>
 
-            {/* --- Responsive Visuals --- */}
-
-            {/* Mobile/Tablet View: Flex Wrap Grid (Visible on small screens) */}
-            <div className="flex flex-wrap gap-3 lg:hidden mt-auto">
-              <FloatingPill isStatic icon={ShieldCheck} label="Escrows" />
-              <FloatingPill isStatic icon={Scale} label="Crowdfunding" />
-              <FloatingPill isStatic icon={Users} label="Freelance Markets" />
-              <FloatingPill isStatic icon={Gavel} label="DAO Grants" />
-              <FloatingPill isStatic icon={Coins} label="Prediction Markets" />
-            </div>
-
-            {/* Desktop View: Floating Cloud (Visible only on lg screens) */}
-            <div className="relative hidden lg:block h-[300px] w-full mt-0">
+            {/* Floating Pills Section */}
+            <div className="relative z-10 hidden lg:block h-[220px]">
               <FloatingPill
                 icon={ShieldCheck}
                 label="Escrows"
-                className="top-[20%] left-[5%]"
+                className="bottom-[20%] left-[5%]"
                 rotate="rotate(-6deg)"
               />
               <FloatingPill
                 icon={Scale}
                 label="Crowdfunding"
-                className="top-[10%] right-[15%]"
+                className="top-[15%] right-[10%]"
                 rotate="rotate(4deg)"
               />
               <FloatingPill
                 icon={Users}
                 label="Freelance Markets"
-                className="top-[50%] left-[35%] z-20"
+                className="top-[50%] left-[30%]"
                 rotate="rotate(-2deg)"
               />
               <FloatingPill
                 icon={Gavel}
                 label="DAO Grants"
-                className="bottom-[15%] left-[15%]"
+                className="bottom-[10%] left-[12%]"
                 rotate="rotate(8deg)"
               />
               <FloatingPill
                 icon={Coins}
                 label="Prediction Markets"
-                className="bottom-[25%] right-[10%]"
+                className="bottom-[25%] right-[8%]"
                 rotate="rotate(-5deg)"
               />
             </div>

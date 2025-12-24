@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Apple, Play, Battery, Signal, Wifi } from "lucide-react";
+import { Battery, Signal, Wifi } from "lucide-react";
 
 // 1. Image-Based Phone Screen Component
 function PhoneScreen({
@@ -70,25 +70,37 @@ function PhoneFrame({
 
 export function MobileSection() {
   return (
-    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden bg-gradient-to-t from-gray-100 via-gray-50 to-white">
+    <section id="mobile" className="relative pt-24 md:pt-32 pb-0 overflow-hidden bg-gradient-to-t from-gray-100 via-gray-50 to-white">
       <div className="container relative z-10 mx-auto max-w-7xl px-6 text-center">
         {/* Header Content */}
         <div className="mx-auto max-w-2xl mb-16 md:mb-24">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#0D1A12] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#0D1A12] mb-4">
             Justice is a Swipe Away
           </h2>
-          <p className="text-lg text-gray-500 mb-8">
+          <p className="text-base text-gray-500 mb-8">
             Review evidence, cast your vote, and level up your juror rank from
             anywhere.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-colors">
-              <Apple className="mr-2 h-5 w-5" />
+            <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-all hover:-translate-y-0.5">
+              <Image 
+                src="/icons/ios.png" 
+                alt="iOS" 
+                width={20} 
+                height={20} 
+                className="mr-2"
+              />
               Download on iOS
             </Button>
-            <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-colors">
-              <Play className="mr-2 h-5 w-5 fill-current" />
+            <Button className="h-12 px-6 rounded-lg bg-white border border-gray-200 text-black hover:bg-gray-50 shadow-sm transition-all hover:-translate-y-0.5">
+              <Image 
+                src="/icons/android.png" 
+                alt="Android" 
+                width={20} 
+                height={20} 
+                className="mr-2"
+              />
               Download on Android
             </Button>
           </div>
