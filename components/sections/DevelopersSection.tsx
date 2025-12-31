@@ -166,12 +166,12 @@ export function DevelopersSection() {
 
             <div className="flex gap-4">
               <Link href={SLICE_LINKS.DOCS} target="_blank" rel="noopener noreferrer">
-                <Button className="h-12 px-6 rounded-full bg-black text-white font-bold hover:bg-primary shadow-xl hover:shadow-2xl transition-colors">
+                <Button className="h-12 px-12 rounded-full bg-[#1A1025] text-white text-base font-bold hover:bg-primary transition-colors">
                   Read the Docs
                 </Button>
               </Link>
               <Link href={SLICE_LINKS.GITHUB} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="h-12 px-6 rounded-full border-gray-200 font-bold hover:bg-gray-50">
+                <Button variant="outline" className="h-12 px-6 rounded-full border-gray-200 text-gray-600 text-base font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 bg-white/50 backdrop-blur-sm">
                   Github
                 </Button>
               </Link>

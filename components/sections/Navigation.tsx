@@ -188,7 +188,7 @@ export default function Navigation() {
         {/* Right Actions */}
         <div className="flex items-center gap-2">
           <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer">
-            <Button className="h-10 rounded-full bg-black hover:bg-primary text-white px-5 text-sm font-bold shadow-lg transition-colors hidden sm:flex border border-white/10">
+            <Button className="h-12 px-6 rounded-full bg-black hover:bg-primary text-white text-base font-bold transition-colors hidden sm:flex border border-white/10">
               Launch Demo<ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
@@ -234,7 +234,7 @@ export default function Navigation() {
               </Link>
             ))}
             <Link href={SLICE_LINKS.APP} target="_blank" rel="noopener noreferrer" className="w-full">
-              <Button className="w-full mt-2 h-12 rounded-xl bg-black hover:bg-primary text-white text-base font-bold shadow-lg">
+              <Button className="w-full mt-2 h-12 rounded-full bg-black hover:bg-primary text-white text-base font-bold transition-colors">
                 Launch App (Mainnet Demo) <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>

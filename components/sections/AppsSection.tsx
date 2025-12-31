@@ -211,7 +211,7 @@ export function AppsSection() {
           >
             <Button
               variant="outline"
-              className="h-12 px-6 rounded-lg border-gray-200 bg-white text-black font-semibold hover:bg-gray-50 hover:border-primary/30 transition-all w-full sm:w-auto"
+              className="h-12 px-6 rounded-full border-gray-200 bg-white text-gray-600 text-base font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 w-full sm:w-auto"
             >
               Integrate Slice
             </Button>
@@ -221,8 +221,8 @@ export function AppsSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="h-12 px-6 rounded-lg bg-primary text-white font-bold shadow-[0_4px_14px_var(--primary)] transition-transform hover:-translate-y-0.5 w-full sm:w-auto">
-            Explore Use Cases
+            <Button className="h-12 px-12 rounded-full bg-[#1A1025] text-white text-base font-bold hover:bg-primary transition-colors w-full sm:w-auto">
+              Explore Use Cases
             </Button>
           </Link>
         </div>

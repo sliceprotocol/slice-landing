@@ -1,6 +1,6 @@
 export function SliceForBusiness() {
   return (
-    <section id="slice-for-business" className="relative bg-[#FAFAFA] py-24 md:py-32">
+    <section id="slice-for-business" className="relative bg-[#FAFAFA] pt-24 md:pt-32 pb-8 md:pb-12">
       <div className="container mx-auto max-w-7xl px-6">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0D1A12] mb-6 tracking-tight">

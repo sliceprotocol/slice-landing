@@ -20,6 +20,11 @@ const partners = [
     logo: "/icons/kindfi.png",
     url: "https://www.kindfi.org/",
   },
+  {
+    name: "Koopay",
+    logo: "/icons/koopay.png",
+    url: "https://koopay.xyz/",
+  },
 ];
 
 export function PartnersSection() {
@@ -42,20 +47,14 @@ export function PartnersSection() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center justify-center mx-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 ${
-                  partner.name === "GrantFox" 
-                    ? "h-20 w-40" 
-                    : "h-16 w-32"
-                }`}
+                className="flex items-center justify-center mx-4 h-16 w-32 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
               >
                 <Image
                   src={partner.logo}
                   alt={partner.name}
-                  width={partner.name === "GrantFox" ? 160 : 128}
-                  height={partner.name === "GrantFox" ? 80 : 64}
-                  className={`object-contain w-auto ${
-                    partner.name === "GrantFox" ? "max-h-16" : "max-h-12"
-                  }`}
+                  width={128}
+                  height={64}
+                  className="object-contain max-h-12 w-auto"
                 />
               </Link>
             ))}

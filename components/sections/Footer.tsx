@@ -45,7 +45,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="h-14 px-8 rounded-full bg-primary text-white text-lg font-bold hover:bg-[#a040d0] shadow-[0_0_40px_var(--primary)] transition-all hover:-translate-y-1">
+              <Button className="h-12 px-12 rounded-full bg-primary text-white text-base font-bold hover:bg-[#a040d0] transition-colors">
                 Start Judging
               </Button>
             </Link>
@@ -56,9 +56,9 @@ export function Footer() {
             >
               <Button
                 variant="ghost"
-                className="h-14 px-8 rounded-full border border-white/10 bg-white/5 text-lg font-bold text-white hover:bg-white/10 hover:text-white"
+                className="h-12 px-6 rounded-full border border-white/10 bg-white/5 text-base font-bold text-white hover:bg-white/10 hover:text-white"
               >
-                Read the Docs <ArrowRight className="ml-2 size-5" />
+                Read the Docs <ArrowRight className="ml-2 size-4" />
               </Button>
             </Link>
           </div>
