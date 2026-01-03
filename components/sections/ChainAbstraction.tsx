@@ -61,37 +61,24 @@ export function ChainAbstraction() {
         {/* Footer: Tech Stack (Subtle, confirming robustness without clutter) */}
         <div className="mt-24 pt-10 border-t border-gray-100 text-center">
           <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">
-            Secured by the world's best networks
+            Available on
           </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-500">
+          
+          <div className="flex flex-wrap items-center justify-center gap-3">
             {[
-              { name: "Ethereum", icon: "/icons/ethereum.png" },
-              { name: "Base", icon: "/icons/base.png" },
-              { name: "Optimism", icon: "/icons/optimism.png" },
-              { name: "Arbitrum", icon: "/icons/arbitrum.png" },
-              { name: "Polygon", icon: "/icons/polygon.png" },
-              { name: "Gnosis", icon: "/icons/gnosis.png" },
-              { name: "Scroll", icon: "/icons/scroll.png" },
-              { name: "Linea", icon: "/icons/linea.png" },
-            ].map((chain) => (
+              { name: "Base Miniapp" },
+              { name: "Farcaster Miniapp" },
+              { name: "Lemon Miniapp" },
+              { name: "Beexo Miniapp" },
+              { name: "Web App" },
+            ].map((platform) => (
               <div
-                key={chain.name}
-                className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 bg-white text-xs font-bold text-gray-500 hover:border-primary/30 hover:text-primary transition-colors cursor-default"
+                key={platform.name}
+                className="px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-xs font-bold text-primary hover:border-primary/40 hover:bg-primary/10 transition-colors cursor-default shadow-[0_0_15px_rgba(188,95,239,0.1)]"
               >
-                <Image
-                  src={chain.icon}
-                  alt={chain.name}
-                  width={16}
-                  height={16}
-                  className="rounded-full"
-                />
-                {chain.name}
+                {platform.name}
               </div>
             ))}
-            <div className="px-3 py-2 text-xs font-bold text-gray-400">
-              + 100 EVM Chains
-            </div>
           </div>
         </div>
       </div>
