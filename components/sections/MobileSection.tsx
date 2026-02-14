@@ -146,7 +146,7 @@ export function MobileSection() {
               <PhoneFrame className="h-full w-full shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)] ring-4 ring-black/5">
                 <PhoneScreen
                   imageSrc="/images/main-page-wireframe.png"
-                  altText="Slice Main Dashboard"
+                  altText="Justly Main Dashboard"
                 />
               </PhoneFrame>
             </div>

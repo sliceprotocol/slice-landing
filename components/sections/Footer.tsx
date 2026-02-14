@@ -75,11 +75,11 @@ export function Footer() {
               <div className="flex items-center gap-2 text-3xl font-bold">
                 {/* Replaced Inline SVG with Image Tag referencing the uploaded file */}
                 <img
-                  src="/icons/slice-light-logo-transparent.svg"
-                  alt="Slice Protocol Logo"
+                  src="/icons/justly-light-logo-transparent.svg"
+                  alt="Justly Protocol Logo"
                   className="w-12 h-12 object-contain"
                 />
-                Slice
+                Justly
               </div>
             </Link>
           </div>
@@ -308,7 +308,7 @@ export function Footer() {
           </div>
           <div className="flex flex-col items-center md:items-end">
             <p className="text-sm text-gray-600">
-              © 2025 Slice Protocol. All rights reserved.
+              © 2025 Justly Protocol. All rights reserved.
             </p>
             <p className="text-xs text-gray-700 mt-1">
               {SLICE_LINKS.SOCIAL_HANDLE}
@@ -327,7 +327,7 @@ export function Footer() {
         >
           <defs>
             <linearGradient
-              id="sliceGradient"
+              id="justlyGradient"
               x1="0%"
               y1="0%"
               x2="0%"
@@ -349,12 +349,12 @@ export function Footer() {
             fontSize="480"
             fontWeight="700"
             letterSpacing="-0.04em"
-            stroke="url(#sliceGradient)"
+            stroke="url(#justlyGradient)"
             strokeWidth="2"
             fill="none"
             fontFamily="sans-serif"
           >
-            Slice
+            Justly
           </text>
         </svg>
       </div>

@@ -10,7 +10,7 @@ import { MobileSection } from "@/components/sections/MobileSection";
 import { JusticeFeatures } from "@/components/sections/JusticeFeatures";
 import { TechnicalFeatures } from "@/components/sections/TechnicalFeatures";
 import { BusinessUseCases } from "@/components/sections/BusinessUseCases";
-import { SliceForBusiness } from "@/components/sections/SliceForBusiness";
+import { ForBusiness } from "@/components/sections/ForBusiness";
 import { PartnersSection } from "@/components/sections/PartnersSection";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
         <HeroSection />
         <SecurityGuarantees />
         <JusticeFeatures />
-        <SliceForBusiness />
+        <ForBusiness />
         <PartnersSection />
         <BusinessUseCases />
         <ChainAbstraction />

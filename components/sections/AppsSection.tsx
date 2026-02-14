@@ -117,7 +117,6 @@ function AppIcon({
   );
 }
 
-
 export function AppsSection() {
   return (
     <section
@@ -197,10 +196,12 @@ export function AppsSection() {
 
       <div className="container relative z-20 mx-auto max-w-4xl px-6 text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1A12] mb-6 tracking-tight">
-        Dispute Resolution for <br/>Digital Products
+          Dispute Resolution for <br />
+          Digital Products
         </h2>
         <p className="text-base text-gray-500 mb-10 max-w-xl mx-auto">
-        Slice helps platforms resolve small, frequent disputes without support teams, manual reviews, or biased decisions.
+          Justly helps platforms resolve small, frequent disputes without
+          support teams, manual reviews, or biased decisions.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
@@ -213,7 +214,7 @@ export function AppsSection() {
               variant="outline"
               className="h-12 px-6 rounded-full border-gray-200 bg-white text-gray-600 text-base font-bold hover:bg-white hover:text-[#0D1A12] hover:border-gray-300 w-full sm:w-auto"
             >
-              Integrate Slice
+              Integrate Justly
             </Button>
           </Link>
           <Link

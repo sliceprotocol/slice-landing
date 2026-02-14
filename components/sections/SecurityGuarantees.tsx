@@ -65,7 +65,7 @@ export function SecurityGuarantees() {
             A Neutral Dispute Resolution Protocol
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            A fair court for the digital age. Slice settles disputes
+            A fair court for the digital age. Justly settles disputes
             automatically using code and clear incentives, removing human bias
             from the equation.{" "}
           </p>

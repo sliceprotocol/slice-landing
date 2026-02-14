@@ -1,7 +1,7 @@
-export function SliceForBusiness() {
+export function ForBusiness() {
   return (
     <section
-      id="slice-for-business"
+      id="for-business"
       className="relative bg-[#FAFAFA] pt-24 md:pt-32 pb-8 md:pb-12"
     >
       <div className="container mx-auto max-w-7xl px-6">
@@ -15,7 +15,7 @@ export function SliceForBusiness() {
             <span className="bg-purple-100 text-purple-700 px-1 rounded font-medium">
               expensive, slow and risky
             </span>
-            . Slice lets you resolve conflicts without becoming the judge. We
+            . Justly lets you resolve conflicts without becoming the judge. We
             provide a neutral dispute resolution layer that integrates into your
             platform and handles disagreements fairly, quickly, and
             automatically.

@@ -34,10 +34,10 @@ function CodeWindow() {
             <span className="text-[#6A9955]">// Initialize the Dispute</span>
             {"\n"}
             <span className="text-[#569CD6]">const</span>{" "}
-            <span className="text-[#9CDCFE]">sliceProtocol</span>{" "}
+            <span className="text-[#9CDCFE]">justlyProtocol</span>{" "}
             <span className="text-[#D4D4D4]">=</span>{" "}
             <span className="text-[#C586C0]">await</span>{" "}
-            <span className="text-[#4EC9B0]">Slice</span>
+            <span className="text-[#4EC9B0]">Justly</span>
             <span className="text-[#D4D4D4]">.</span>
             <span className="text-[#DCDCAA]">connect</span>
             <span className="text-[#D4D4D4]">(</span>
@@ -52,7 +52,7 @@ function CodeWindow() {
             <span className="text-[#9CDCFE]">tx</span>{" "}
             <span className="text-[#D4D4D4]">=</span>{" "}
             <span className="text-[#C586C0]">await</span>{" "}
-            <span className="text-[#9CDCFE]">sliceProtocol</span>
+            <span className="text-[#9CDCFE]">justlyProtocol</span>
             <span className="text-[#D4D4D4]">.</span>
             <span className="text-[#DCDCAA]">create_dispute</span>
             <span className="text-[#D4D4D4]">({`{`}</span>
@@ -86,7 +86,7 @@ function CodeWindow() {
               // Step 2: Protocol waits for ruling
             </span>
             {"\n"}
-            <span className="text-[#9CDCFE]">sliceProtocol</span>
+            <span className="text-[#9CDCFE]">justlyProtocol</span>
             <span className="text-[#D4D4D4]">.</span>
             <span className="text-[#DCDCAA]">on</span>
             <span className="text-[#D4D4D4]">(</span>
@@ -160,7 +160,7 @@ export function DevelopersSection() {
             </h2>
 
             <p className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed">
-              Escrows, Freelance Markets, and DAOs use Slice to resolve
+              Escrows, Freelance Markets, and DAOs use Justly to resolve
               disagreements in real time.
             </p>
 

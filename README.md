@@ -1,25 +1,25 @@
-# Slice
+# Justly
 
 **Get paid for doing justice.**
-Slice is a decentralized dispute resolution network that helps apps settle conflicts and lets people earn rewards by acting as jurors.
+Justly is a decentralized dispute resolution network that helps apps settle conflicts and lets people earn rewards by acting as jurors.
 
 Fast, neutral, and on-chain.
 
 ---
 
-## What Is Slice?
+## What Is Justly?
 
-Slice is a **decision layer** for the internet.
+Justly is a **decision layer** for the internet.
 
-When two parties disagree, Slice produces a **trustless ruling** that apps and smart contracts can rely on — without holding funds, enforcing logic, or taking sides.
+When two parties disagree, Justly produces a **trustless ruling** that apps and smart contracts can rely on — without holding funds, enforcing logic, or taking sides.
 
-Slice answers one question:
+Justly answers one question:
 
 **Who is right?**
 
 ---
 
-## Why Slice?
+## Why Justly?
 
 Digital transactions need a way to resolve disputes that is:
 
@@ -28,20 +28,20 @@ Digital transactions need a way to resolve disputes that is:
 * **Scalable** – thousands of jurors available on demand
 * **Trustless** – verifiable, on-chain outcomes
 
-Slice is built to make decentralized justice practical at scale.
+Justly is built to make decentralized justice practical at scale.
 
 ---
 
 ## How It Works
 
 1. An app or contract opens a dispute
-2. Slice randomly selects jurors from a staked pool
+2. Justly randomly selects jurors from a staked pool
 3. Jurors vote privately
 4. Votes are verified and tallied on-chain
 5. A final ruling is published
 6. The external app executes its own logic
 
-Slice does not move funds or enforce outcomes.
+Justly does not move funds or enforce outcomes.
 It simply delivers a **credible decision**.
 
 ---
@@ -66,7 +66,7 @@ The system rewards honest judgment and active participation.
 
 All votes are private until the decision is finalized.
 
-Slice uses a commit–reveal mechanism so that:
+Justly uses a commit–reveal mechanism so that:
 
 * Votes cannot be copied
 * Coordination and bribery are harder
@@ -94,7 +94,7 @@ Predict the majority, earn rewards.
 
 ## Built for Apps
 
-Slice is designed to plug into any platform that needs neutral decisions:
+Justly is designed to plug into any platform that needs neutral decisions:
 
 * Marketplaces
 * Escrow systems
@@ -103,8 +103,8 @@ Slice is designed to plug into any platform that needs neutral decisions:
 * Games and digital services
 
 Apps open disputes and read rulings.
-Slice stays independent.
+Justly stays independent.
 
 ---
 
-**Slice is a decentralized network where people get paid to resolve disputes, and apps get fast, neutral, on-chain decisions.**
+**Justly is a decentralized network where people get paid to resolve disputes, and apps get fast, neutral, on-chain decisions.**

@@ -53,10 +53,10 @@ export function JusticeFeatures() {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
-            Why Slice works for real products
+            Why Justly works for real products
           </h2>
           <p className="max-w-2xl text-lg text-zinc-400 leading-relaxed">
-            Slice helps products resolve disputes at scale without support
+            Justly helps products resolve disputes at scale without support
             overhead or bias, using an external and automated resolution system.
           </p>
         </div>

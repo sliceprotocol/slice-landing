@@ -57,7 +57,7 @@ export function HeroSection() {
               rel="noopener noreferrer"
             >
               <Button className="h-12 px-12 gap-2 rounded-full bg-[#1A1025] text-white text-base font-bold hover:bg-primary transition-colors min-w-[180px] group">
-                Integrate Slice{" "}
+                Integrate Justly{" "}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
@@ -310,14 +310,14 @@ function HeroDashboard() {
           {/* Logo Container */}
           <div className="size-9 bg-black rounded-xl flex items-center justify-center shadow-lg shadow-purple-200">
             <img
-              src="/icons/slice-logo-transparent.svg"
-              alt="Slice"
+              src="/icons/justly-logo-transparent.svg"
+              alt="Justly"
               className="size-5 object-contain brightness-0 invert"
             />
           </div>
 
           <span className="font-bold text-xl text-[#0D1A12] tracking-tight">
-            Slice
+            Justly
           </span>
         </div>
 

@@ -62,7 +62,7 @@ export function JusticeForEveryone() {
             <span className="bg-purple-100 text-purple-700 px-1 rounded font-medium">
               earn yield
             </span>{" "}
-            by judging or need a neutral arbitration layer for your dApp, Slice
+            by judging or need a neutral arbitration layer for your dApp, Justly
             is the standard.
           </p>
         </div>

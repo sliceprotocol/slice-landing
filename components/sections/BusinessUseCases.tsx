@@ -69,7 +69,7 @@ export function BusinessUseCases() {
           </h2>
 
           <p className="max-w-2xl text-lg text-zinc-400 leading-relaxed font-light">
-            Slice fits naturally into products where agreements, trust, and
+            Justly fits naturally into products where agreements, trust, and
             payments matter:
           </p>
         </div>

@@ -34,7 +34,8 @@ export function PartnersSection() {
         {/* Header */}
         <div className="text-center mb-8">
           <p className="text-sm md:text-base text-violet-900 font-medium italic mb-4">
-            Slice is being tested and integrated by early partners building real products.
+            Justly is being tested and integrated by early partners building
+            real products.
           </p>
         </div>
 
@@ -64,4 +65,3 @@ export function PartnersSection() {
     </section>
   );
 }
-
