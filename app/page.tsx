@@ -4,11 +4,9 @@ import { DevelopersSection } from "@/components/sections/DevelopersSection";
 import { AppsSection } from "@/components/sections/AppsSection";
 import { Footer } from "@/components/sections/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { JusticeForEveryone } from "@/components/sections/JusticeForEveryone";
 import { SecurityGuarantees } from "@/components/sections/SecurityGuarantees";
 import { MobileSection } from "@/components/sections/MobileSection";
 import { JusticeFeatures } from "@/components/sections/JusticeFeatures";
-import { TechnicalFeatures } from "@/components/sections/TechnicalFeatures";
 import { BusinessUseCases } from "@/components/sections/BusinessUseCases";
 import { ForBusiness } from "@/components/sections/ForBusiness";
 import { PartnersSection } from "@/components/sections/PartnersSection";
@@ -25,7 +23,6 @@ export default function Home() {
         <PartnersSection />
         <BusinessUseCases />
         <ChainAbstraction />
-        {/* <JusticeForEveryone /> */}
         <AppsSection />
         <DevelopersSection />
         <MobileSection />

@@ -1,7 +1,7 @@
 export const SLICE_LINKS = {
   GITHUB: "https://github.com/sliceprotocol",
-  DOCS: "https://docs.slicehub.xyz/",
-  APP: "https://app.slicehub.xyz",
+  DOCS: "https://docs.justly.one",
+  APP: "https://app.justly.one",
   X: "https://x.com/slicehub_xyz",
   SOCIAL_HANDLE: "@slicehub_xyz",
 };
@@ -10,5 +10,5 @@ export const NAV_LINKS = [
   { name: "Product", href: "#product" },
   { name: "For Business", href: "#for-business" },
   { name: "Developers", href: "#developers" },
-  { name: "Docs", href: "https://docs.slicehub.xyz/" },
+  { name: "Docs", href: "https://docs.justly.one/" },
 ];

@@ -14,21 +14,21 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icons/justly-logo-transparent.svg",
+        url: "/logos/light.svg",
         type: "image/svg+xml",
       },
       {
-        url: "/icons/justly-light-logo-transparent.svg",
+        url: "/logos/dark.svg",
         media: "(prefers-color-scheme: light)",
         type: "image/svg+xml",
       },
       {
-        url: "/icons/justly-logo-transparent.svg",
+        url: "/logos/light.svg",
         media: "(prefers-color-scheme: dark)",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/logos/light.png",
   },
 };
 

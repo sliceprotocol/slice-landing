@@ -110,7 +110,7 @@ export function BusinessUseCases() {
         {/* Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="https://docs.slicehub.xyz/overview/use-cases"
+            href="https://docs.justly.one/overview/use-cases"
             target="_blank"
             rel="noopener noreferrer"
           >

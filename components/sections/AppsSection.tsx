@@ -218,7 +218,7 @@ export function AppsSection() {
             </Button>
           </Link>
           <Link
-            href="https://docs.slicehub.xyz/overview/use-cases"
+            href="https://docs.justly.one/overview/use-cases"
             target="_blank"
             rel="noopener noreferrer"
           >

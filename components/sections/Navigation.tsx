@@ -213,8 +213,8 @@ export default function Navigation() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="h-12 px-6 rounded-full bg-black hover:bg-primary text-white text-base font-bold transition-colors hidden sm:flex border border-white/10">
-              Launch Demo
+            <Button className="h-12 px-8 rounded-full bg-black hover:bg-primary text-white text-base font-bold transition-colors hidden sm:flex border border-white/10">
+              Demo App
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
